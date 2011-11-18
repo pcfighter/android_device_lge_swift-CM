@@ -1,0 +1,16 @@
+Making new build:
+
+1) Make sure you have everything you need:
+http://source.android.com/source/initializing.html
+2a) At root repo catalogue (for system image):
+$ . build/envsetup.sh
+$ choosecombo 1 1 full_swift 2
+$ make -j2
+
+2b) At root repo catalogue (for kernel):
+$ . build/envsetup.sh
+$ choosecombo 1 1 generic 1
+$ cd kernel
+$ make -j2 ARCH=arm CROSS_COMPILE=arm-eabi-
+
+3) And waste your time ...

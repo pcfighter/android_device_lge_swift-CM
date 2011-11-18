@@ -1,0 +1,189 @@
+# 0x80000000 - 0xFFFFFFFF Kernel
+# 0x70100000 - 0x7FFFFFFF Thread 0 Stack
+# 0x70000000 - 0x700FFFFF Linker
+# 0x60000000 - 0x6FFFFFFF Prelinked System Libraries
+# 0x50000000 - 0x5FFFFFFF Prelinked App Libraries
+# 0x40000000 - 0x4FFFFFFF Non-prelinked Libraries
+# 0x2AAAAAAA - 0x3FFFFFFF mmap'd stuff
+# 0x10000000 - 0x2AAAAAA9 Thread Stacks
+# 0x00000000 - 0x0FFFFFFF .text / .data / heap
+# Note  The general rule is that libraries should be aligned on 1MB
+# boundaries. For ease of updating this file, you will find a comment
+# on each line, indicating the observed size of the library, which is
+# one of 
+#
+#     [<64K] observed to be less than 64K
+#     [~1M] rounded up, one megabyte (similarly for other sizes)
+#     [???] no size observed, assumed to be one megabyte
+#
+# note  look at the LOAD sections in the library header 
+#
+#   arm-eabi-objdump -x <lib>
+#
+
+libdl.so  0x6ff00000
+libc.so  0x6fe00000
+libstdc++.so  0x6fd00000
+libm.so  0x6fc00000
+liblog.so  0x6fbc0000
+libcutils.so  0x6fb00000
+libthread_db.so  0x6fa00000
+libz.so  0x6f900000
+libssl.so  0x6f700000
+libcrypto.so  0x6f500000
+libsysutils.so  0x6f400000
+liba2dp.so  0x6ee00000
+audio.so  0x6ed00000
+input.so  0x6ec00000
+libbluetoothd.so  0x6eb00000
+libbluedroid.so  0x6ea00000
+libbluetooth.so  0x6e900000
+libdbus.so  0x6e800000
+libril.so  0x6e400000
+libreference-ril.so  0x6e000000
+libwpa_client.so  0x6dc00000
+libnetutils.so  0x6db00000
+libandroid_servers.so  0x6d900000
+libicuuc.so  0x6d500000
+libicui18n.so  0x6d400000
+libevent.so		0x6d3f8000
+libandroid_runtime.so  0x6d300000
+libnativehelper.so  0x6d200000
+libdvm-ARM.so	 	0x6d100000
+libdvm.so  0x6d000000
+libpixelflinger.so  0x6cf00000
+libcorecg.so	 	0x6ce80000
+libsurfaceflinger_client.so	0x6ce00000
+libsurfaceflinger.so  0x6cd00000
+libGLES_android.so  0x6cc80000
+libagl.so	 	0x6cb80000
+libGLESv1_CM.so  0x6cb00000
+libGLESv2.so  0x6ca00000
+libOpenVG_CM.so	 	0x6c900000
+libOpenVGU_CM.so	0x6c800000
+libEGL.so  0x6c700000
+libETC1.so	 	0x6c680000
+libacc.so  0x6c600000
+libexif.so  0x6c500000
+libcamera_client.so	0x6c480000
+libui.so  0x6c400000
+libsgl.so	 	0x6c380000
+libjnigraphics.so	0x6c300000
+libskiagl.so  0x6c200000
+libFLAC.so	 	0x6c180000
+libskia.so  0x6c000000
+librs_jni.so  0x6bf00000
+libRS.so  0x6b900000
+libaudiopolicy.so  0x6b880000
+libaudiopolicygeneric.so  0x6b800000
+libsoundpool.so  0x6b780000
+libaudio.so  0x6b700000
+libspeech.so	 	0x6b600000
+libsonivox.so  0x6b500000
+libvorbisidec.so  0x6b400000
+libmedia_jni.so  0x6b300000
+libmediaplayerservice.so  0x6b280000
+libmedia.so  0x6b200000
+libFFTEm.so  0x6b100000
+libSR_AudioIn.so	0x6b080000
+libaudioflinger.so  0x6b000000
+libsqlite.so  0x6ac00000
+libexpat.so  0x6ab00000
+libwebcore.so  0x6a000000
+libbinder.so  0x69d80000
+libutils.so  0x69d00000
+libcameraservice.so  0x69c80000
+libhardware.so  0x69c70000
+libhardware_legacy.so  0x69c00000
+libapp_process.so	0x69b00000
+libsystem_server.so  0x69a00000
+libime.so	 	0x69800000
+libgps.so	 	0x69700000
+libcamera.so  0x69680000
+liboemcamera.so  0x69400000
+libdiskconfig.so	0x68300000
+libemoji.so	 	0x68200000
+libjni_latinime.so	0x68100000
+libjni_pinyinime.so	0x68000000
+libttssynthproxy.so	0x67f00000
+libttspico.so	 	0x67e00000
+libpvasf.so	 	0x67d00000
+libpvasfreg.so	 	0x67c00000
+libomx_sharedlibrary.so  0x67ba0000
+libopencore_download.so  0x67b40000
+libopencore_downloadreg.so  0x67b00000
+libopencore_net_support.so  0x67a00000
+libopencore_rtsp.so  0x67900000
+libopencore_rtspreg.so  0x67890000
+libopencore_author.so  0x67800000
+libomx_aacdec_sharedlibrary.so  0x67700000
+libomx_amrdec_sharedlibrary.so  0x676a0000
+libomx_amrenc_sharedlibrary.so  0x67680000
+libomx_avcdec_sharedlibrary.so  0x67660000
+libomx_avcenc_sharedlibrary.so	0x67600000
+libomx_m4vdec_sharedlibrary.so  0x675c0000
+libomx_m4venc_sharedlibrary.so	0x67500000
+libomx_mp3dec_sharedlibrary.so  0x67450000
+libopencore_mp4local.so  0x67400000
+libopencore_mp4localreg.so  0x67300000
+libmm-adspsvc.so		0x67280000
+libOmxCore.so			0x67200000
+libOmxMpeg4Dec.so		0x67180000
+libOmxH264Dec.so		0x67140000
+libOmxVidEnc.so			0x67100000
+libopencore_player.so  0x67000000
+libopencorehw.so  0x66f50000
+libOmxVdec.so			0x66200000
+libmm-omxcore.so		0x66100000
+libopencore_common.so  0x66000000
+libqcomm_omx.so  0x65a00000
+libstagefright_amrnb_common.so	0x63700000
+libstagefright_avc_common.so	0x63600000
+libstagefright_color_conversion.so	0x63500000
+libstagefright_omx.so		0x63400000
+libstagefrighthw.so		0x63300000
+libstagefright.so		0x62F00000
+libaudioeffect_jni.so	0x62e00000	
+libeffects.so		0x62D00000
+libgui.so			0x62C00000
+libandroid.so			0x62B00000
+libreference-cdma-sms.so	0x62A00000
+
+#apps
+libril_log.so  0x5f600000
+libcam_ipl.so			0x5F000000
+libwbxml.so  0x5e800000
+libwbxml_jni.so  0x5e400000
+libxml2wbxml.so  0x5e000000
+libaes.so  0x5dc00000
+libdrm1.so  0x5d800000
+libdrm1_jni.so  0x5d400000
+libwapcore.so	 		0x5b300000
+libstreetview.so	 	0x5b200000
+libwapbrowsertest.so	 	0x5b100000
+libminiglobe.so	 		0x5af00000
+libearth.so	 		0x5ae00000
+libembunit.so	 		0x5ad00000
+libneon.so	 		0x5ac00000
+libjni_example.so	 	0x5ab00000
+libjni_load_test.so	 	0x5aa00000
+libjni_lib_test.so	 	0x5a900000
+librunperf.so	 		0x5a800000
+libctest.so  0x5a700000
+libUAPI_jni.so	 		0x5a600000
+librpc.so  0x5a400000
+libtrace_test.so	 	0x5a300000
+libsrec_jni.so  0x5a200000
+libjpeg.so	 		0x5a100000
+libiprouteutil.so	 	0x5a000000
+libnetlink.so	 		0x59f00000
+libpagemap.so	 		0x59e00000
+libstlport.so	 		0x59d00000
+libzxing.so	 		0x59c00000
+libinterstitial.so	 	0x59b00000
+liblept.so	 		0x59a00000
+libGLESv2_adreno200.so  0x58d00000
+libEGL_adreno200.so  0x58cb5000
+libGLESv1_CM_adreno200.so  0x58c83000
+libgsl.so  0x58c6a000
+libstlport.so	 0x57000000
