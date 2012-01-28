@@ -25,7 +25,6 @@ PRODUCT_PACKAGES += \
     Stk \
     copybit.swift \
     hcitool \
-    TSCalibration \
     libmm-omxcore \
     librs_jni \
     libOmxCore \

@@ -1,0 +1,15 @@
+#!/system/bin/sh
+#
+# find and enable swap
+#
+
+echo 60 > /proc/sys/vm/swappiness
+
+# find swap partition
+for PART in `seq 0 9`;
+do
+    swapon /dev/block/mmcblk0p$PART
+    if [ $? = 0 ]; then
+        break
+    fi
+done
